@@ -1,0 +1,2 @@
+FROM nginx:alpine
+COPY ./docker/conf/nginx-app.conf /etc/nginx/conf.d/default.conf

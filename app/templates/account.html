@@ -1,0 +1,20 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="dashhead">
+  <div class="dashhead-titles">
+    <h2 class="dashhead-title">My Account</h2>
+  </div>
+</div>
+
+<hr class="mt-3">
+
+<div class="row text-center mt-5">
+</div>
+
+<div class="hr-divider mt-5 mb-3">
+    <h6>E-mail Address: {{ user.email }}</h6>
+    <h6>Password Hash: {{ user.password }}</h6>
+</div>
+{% endblock %}

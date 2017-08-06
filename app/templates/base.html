@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+
+  <title>{% block title %}{{config['TITLE']}}{% endblock %}</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/toolkit-inverse.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/application.css') }}" rel="stylesheet">
+
+  {% block css %}{# page-specific CSS #}{% endblock %}
+
+  {% block head_script %}{# defer-incapable JS block #}{% endblock %}
+  </head>
+
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1 sidebar">
+        {% include 'includes/nav-icon.html' %}
+      </div>
+      <div class="col-md-11 content">
+        {% block content %}{# main content area #}{% endblock %}
+      </div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/tether.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/chart.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/tablesorter.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/toolkit.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/application.js') }}"></script>
+
+  <script>
+    // execute/clear BS loaders for docs
+    $(function(){while(window.BS&&window.BS.loader&&window.BS.loader.length){(window.BS.loader.pop())()}})
+  </script>
+  </body>
+</html>

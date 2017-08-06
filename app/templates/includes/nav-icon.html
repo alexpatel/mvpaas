@@ -1,0 +1,45 @@
+<nav class="iconav">
+  <a class="iconav-brand" href="{{ url_for('main.index') }}">
+    <span class="icon icon-rocket iconav-brand-icon"></span>
+  </a>
+  <div class="iconav-slider">
+    <ul class="nav nav-pills iconav-nav flex-md-column">
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('main.index') }}" title="Strategy Quick Start" data-toggle="tooltip" data-placement="right" data-container="body">
+          <span class="icon icon-area-graph"></span>
+          <small class="iconav-nav-label hidden-md-up">Strategy Quick Start</small>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('main.index') }}" title="Recommended Action" data-toggle="tooltip" data-placement="right" data-container="body">
+          <span class="icon icon-aircraft-take-off"></span>
+          <small class="iconav-nav-label hidden-md-up">Recommended Action</small>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('main.index') }}" title="Knowledge Management" data-toggle="tooltip" data-placement="right" data-container="body">
+          <span class="icon icon-archive"></span>
+          <small class="iconav-nav-label hidden-md-up">Knowledge Management</small>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('auth.account') }}" title="Account" data-toggle="tooltip" data-placement="right" data-container="body">
+          <span class="icon icon-user"></span>
+          <small class="iconav-nav-label hidden-md-up">My Account</small>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('auth.logout') }}" title="Logout" data-toggle="tooltip" data-placement="right" data-container="body">
+          <span class="icon icon-log-out"></span>
+          <small class="iconav-nav-label hidden-md-up">Logout</small>
+        </a>
+      </li>
+    </ul>
+  </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

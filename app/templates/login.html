@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>Login &middot;</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/toolkit-inverse.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/application.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/login.css') }}" rel="stylesheet">
+
+    <style>
+      body { 
+        background: url('{{ url_for('static', filename='img/city_lights_namerica_8k.jpg') }}') no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-3 content">
+        </div>
+
+        <div class="col-md-6 content">
+           <div class="absolute-center-responsive">
+            <div class="loginmodal-container">
+              <h1>BoGO (Bundle of Growth Options)</h1><br>
+              <form action="" method="post">
+              <input type="text" placeholder="E-mail Address" name="email" value="{{ request.form.email }}">
+                <input type="password" placeholder="Password" name="password" value="{{ request.form.password }}">
+              <input class="btn btn-primary" type="submit" value="Login">
+              </form>
+              {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                  <div class="alert alert-info" role="alert">{{ message }}</div>
+                {% endfor %}
+                {% endif %}
+              {% endwith %}
+            </div>
+          </div>
+           </div>
+
+          <div class="col-md-1 content">
+          </div>
+
+          <div class="col-md-2 content">
+            <div class="powered-by-ibm">
+            <div class="absolute-center-responsive">
+              <h4 color="#000">Powered by:</h4>
+              <img src="{{ url_for('static', filename='img/IBM_Watson.svg') }}" alt="Powered by IBM Watson" width="300px" padding="0px" margin="0px">
+            </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/tether.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/chart.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/tablesorter.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/toolkit.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/application.js') }}"></script>
+    <script>
+    // execute/clear BS loaders for docs
+    $(function(){while(window.BS&&window.BS.loader&&window.BS.loader.length){(window.BS.loader.pop())()}})
+    </script>
+  </body>
+</html>
+

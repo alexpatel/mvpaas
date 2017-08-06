@@ -1,0 +1,31 @@
+version: '2'
+
+services:
+  db:
+    hostname: bogo_mysql
+    image: orchardup/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: p@ssw0rd123
+      MYSQL_DATABASE: bogo
+
+  redis:
+    image: 'redis:3.2.7'
+
+  nginx:
+    image: 'nginx:alpine'
+    ports:
+      - "8000:80"
+    links:
+      - web
+
+  web:
+    build: .
+    ports:
+      - "8082:8082"
+    volumes:
+      - ./app:/app
+    environment:
+      - CONFIG=settings.py
+      - PYTHONPATH=/app:$PYTHONPATH
+    links:
+      - db

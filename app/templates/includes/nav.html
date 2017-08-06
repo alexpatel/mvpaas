@@ -1,0 +1,41 @@
+<nav class="sidebar-nav">
+  <div class="sidebar-header">
+    <button class="nav-toggler nav-toggler-md sidebar-toggler" type="button" data-toggle="collapse" data-target="#nav-toggleable-md">
+      <span class="sr-only">Toggle nav</span>
+    </button>
+    <a class="sidebar-brand img-responsive" href="{{ url_for('main.index') }}">
+      <span class="icon icon-rocket sidebar-brand-icon"></span>
+    </a>
+  </div>
+
+  <div class="collapse nav-toggleable-md" id="nav-toggleable-md">
+    <form class="sidebar-form">
+      <input class="form-control" type="text" placeholder="Search...">
+      <button type="submit" class="btn-link">
+        <span class="icon icon-magnifying-glass"></span>
+      </button>
+    </form>
+
+    <ul class="nav nav-pills nav-stacked flex-column">
+      <li class="nav-header">
+        <a class="nav-link active" href="{{ url_for('main.index') }}">Overview</a>
+      </li>
+      <li class="nav-header">Strategy Quick Start</li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('main.index') }}">Industry</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('main.index') }}">Customer</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('main.index') }}">Company</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('main.index') }}">Competition</a></li>
+      <li class="nav-header">Recommended Action</li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('main.index') }}">BoGO Mix</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('main.index') }}">Criteria</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('main.index') }}">Opportunity ID</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('main.index') }}">Entry</a></li>
+      <li class="nav-header">Knowledge Management</li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('main.index') }}">BoGO Files</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('main.index') }}">Request</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('main.index') }}">Assumptions</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('main.index') }}">New For You</a></li>
+    </ul>
+    <hr class="visible-xs mt-3">
+  </div>
+</nav>
