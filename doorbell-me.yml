@@ -1,0 +1,23 @@
+version: 'alpha-0.1.0'
+
+mvp:
+  name: Doorbell.me
+  description: Resident portal
+  background-image: http://bit.ly/2vbSnLW
+
+  models:
+    - Property:
+      - name: string
+    - Tenant:
+      - property: Property
+      - email: string
+      - password: password
+      - phone: phonenumber
+    - MaintenanceTicket:
+      - tenant: Tenant
+      - problem_summary: string
+      - problem: text
+
+  plugins:
+    - auth: Tenant
+    - maintenance_request: MaintenanceTicket
