@@ -14,10 +14,10 @@ RUN pip install --upgrade pip && pip install \
 
 RUN apt-get -yqq update && apt-get install -yqq gunicorn
 
-COPY ./app /app
+COPY ./web /app
 COPY manage.py /manage.py
 
-WORKDIR /
+WORKDIR /app
 EXPOSE 8082
 RUN python /manage.py createdb
 CMD ["/usr/bin/gunicorn", "--bind", "0.0.0.0:8082", "wsgi"]
